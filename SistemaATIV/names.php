@@ -31,7 +31,11 @@ $meta_semanal_total = 20000; // Meta semanal total
 $meta_mensal_total = 80000; // Meta mensal total
 
 // Calculando bônus por semana
-$bonus_semanal = ($meta_semanal / $meta_semanal_total) * ($salario_minimo * 0.01);
+if ($meta_semanal_total != 0) {
+    $bonus_semanal = ($meta_semanal / $meta_semanal_total) * ($salario_minimo * 0.01);
+} else {
+
+}
 // Calculando excedente de meta semanal
 $excedente_semanal = max(0, $meta_semanal - $meta_semanal_total);
 $bonus_excedente_semanal = ($excedente_semanal / $meta_semanal_total) * ($salario_minimo * 0.05);
